@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<h1>Here are all your tasks:</h1>
+<% @tasks.each do |task| %>
+  <h2><%= task.name %></h2>
+  <p><%= task.done %></p>
+  <p><%= link_to "Delete", task_path(task), method: :delete, data: {confirm: "Are you sure?"} %></p>
+  <p><%= link_to "New", new_task_path %></p>
+<% end %>
